@@ -1,2 +1,2 @@
 # KamilaKulas
-Simple 'about me' app.
+Simple 'about me' app. | WORK IN PROGRESS
