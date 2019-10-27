@@ -8,6 +8,7 @@ const SideRow = styled(Row)`
   background: ${props => props.expanded ? props.theme.opacityLightGray : 'none'};
   height: 100vh;
   padding: 10px 0;
+  transition: width 300ms ease-in-out, background 300ms ease-in-out;
 `;
 
 const InnerRow = styled(Row)`
@@ -17,6 +18,9 @@ const InnerRow = styled(Row)`
 
 const ExpandIcon = styled(Icon)`
   color: ${props => props.theme.lightGray};
+  font-size: 2em;
+  transform: ${props => props.expanded ? 'scaleX(-1)' : 'none'};
+  transition: transform 600ms;
 `;
 
 const Logo = styled.img`
@@ -33,8 +37,9 @@ const SideBar = () => {
         <Logo src={logo} alt='logo'/>
       </InnerRow>
       <InnerRow type='flex' align='bottom' justify='center'>
-        <ExpandIcon type={expanded ? 'left' : 'right'}
-              onClick={() => setExpanded(!expanded)}
+        <ExpandIcon type='right'
+                    expanded={expanded ? 1 : undefined}
+                    onClick={() => setExpanded(!expanded)}
         />
       </InnerRow>
     </SideRow>
