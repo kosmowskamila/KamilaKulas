@@ -22,16 +22,18 @@ const BorderedSider = styled(Sider)`
   border-right: 1px solid ${props => props.theme.lightGray};
 `;
 
-const MainView = () => (
+const SiteLayout = ({children}) => (
   <BackgroundLayout>
     <BorderedSider width='auto'>
       <SideBar/>
     </BorderedSider>
     <Layout className='no-background'>
-        <Content className='no-background'/>
+        <Content className='no-background'>
+          {children}
+        </Content>
         <Footer className='no-background'/>
     </Layout>
   </BackgroundLayout>
 );
 
-export default MainView;
+export default SiteLayout;
